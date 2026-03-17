@@ -60,11 +60,11 @@ docker compose up -d --build
 Now that all services are running, we should configure the different services that will be proxied through NPM.
 
 1. Open your browser and log into the NPM Admin UI at `http://localhost:81`.
-2. Configure the frontend service with the domain: app.meicm.pt
+2. Configure the frontend service with the domain: ```app.meicm.pt```
 3. **Remember:** proxy is in the same network as the other containers, so it can resolve their hostnames.
 4. Define port number and add the host.
 5. Repeat these steps for the API service
-	5.1. Use the domain api.meicm.pt
+	5.1. Use the domain ```api.meicm.pt```
 
 ### Phase 5: Validation
 Open the web browser at http://app.meicm.pt
