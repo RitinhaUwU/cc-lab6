@@ -64,6 +64,7 @@ Now that all services are running, we should configure the different services th
 3. **Remember:** proxy is in the same network as the other containers, so it can resolve their hostnames.
 4. Define port number and add the host.
 5. Repeat these steps for the API service
+	
 	5.1. Use the domain ```api.meicm.pt```
 
 ### Phase 5: Validation
