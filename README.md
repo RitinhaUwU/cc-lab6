@@ -5,19 +5,19 @@
 
 ## Worksheet Briefing
 The provided application now supports user registration and profile picture uploads. 
-The code relies on a relational database (PostgreSQL) and an AWS S3-compatible Object Storage service (MinIO). These worksheets' goals are: autonomously orchestrate these new stateful services; ensure their data survives container restarts; and route them securely through the Nginx Proxy Manager Gateway.
+The code relies on a relational database (PostgreSQL) and an AWS S3-compatible Object Storage service (MinIO). This worksheet's goals are: orchestrate new stateful services; ensure their data survives container restarts; and route them securely through the Nginx Proxy Manager Gateway.
 
 ---
 
 ## Phase 1: Architecture Review
-Explore the repository. You will find:
+Explore the repository source code, that includes:
 1. `/frontend`: An updated web dashboard with an image upload form.
 2. `/api`: An updated Node.js API. 
    * *Check the `server.js` file to see which environment variables the developers expect you to inject for Postgres and S3!*
 
-**Architectural Constraints:**
+**Architectural Requirements:**
 * **Zero-Trust Network:** No backend services (API, Postgres, MinIO) may expose ports to the host.
-* **State Persistence:** Both the database and the object storage must use named Docker Volumes so data is not lost when containers restart.
+* **State Persistence:** Both the database and the object storage must use Docker Volumes so data is not lost when containers restart.
 * **Edge Routing:** Use `*.meicm.pt` (which resolves to `127.0.0.1`) to access the Gateway.
 
 ---
