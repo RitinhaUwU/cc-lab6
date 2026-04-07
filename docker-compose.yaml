@@ -15,10 +15,10 @@ services:
 
 
   frontend:
-    build: ./frontend
+    image: ghcr.io/ritinhauwu/cc-cloud-frontend:latest
 
   api:
-    build: ./api
+    image: ghcr.io/ritinhauwu/cc-cloud-api:latest
     environment:
       - PORT=3000
       - DB_HOST=postgres-db
