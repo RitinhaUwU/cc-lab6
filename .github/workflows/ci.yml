@@ -16,3 +16,23 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the API Docker image
       run: docker build ./api --tag api:$(date +%s)
+
+    - uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: RitinhaUwU
+        password: ${{ secrets.ACTIONS_MAKE_PACKAGES }}
+
+    - uses: docker/build-push-action@v5
+      with:
+        context: ./api
+        push: true
+        tags: ghcr.io/${{ github.actor }}/cc-cloud-api:latest
+
+
+    - uses: docker/build-push-action@v5
+      with:
+        context: ./frontend
+        push: true
+        tags: ghcr.io/${{ github.actor }}/cc-cloud-frontend:latest
+
