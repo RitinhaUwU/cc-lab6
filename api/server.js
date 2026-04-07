@@ -40,6 +40,7 @@ const initDB = async () => {
         console.log("PostgreSQL Table 'users' initialized.");
     } catch (err) {
         console.error("DB Init Error:", err);
+        process.exit(1)
     }
 };
 initDB();
